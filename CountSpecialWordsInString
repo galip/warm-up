@@ -3,6 +3,7 @@
  * 1 Nov 2014
  * @author gpala
  *
+ * Counts the words that end with "y" and "z"(not case sensitive).
  */
 
 public class CountSpecialWordsInString {
