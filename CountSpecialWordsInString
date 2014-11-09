@@ -1,0 +1,30 @@
+
+/**
+ * 1 Nov 2014
+ * @author gpala
+ *
+ */
+
+public class CountSpecialWordsInString {
+	public static void main (String args[]) {
+		
+		String subString1 = "Javaz wordzz sample for Y y Z z YZ xzh Yhza";
+		String subString2 = "abc y Z nn z yy";
+		
+		StringBuffer sb = new StringBuffer(subString1);
+		sb.append(" ");
+		sb.append(subString2);
+		
+		String mainString = sb.toString();
+		
+		String[] stringArray = mainString.split(" ");
+		
+		int counter = 0;		
+		for(String s : stringArray) {
+			if(s.toLowerCase().endsWith("y") || s.toLowerCase().endsWith("z")) {
+				counter ++;
+			}
+		}
+		System.out.println(counter);
+	}
+}
