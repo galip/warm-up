@@ -1,0 +1,42 @@
+import java.text.Collator;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Locale;
+
+/**
+ * 16 Nov 2014
+ * @author gpala
+ * 
+ */
+
+public class SortListByLocale {
+
+	public static void main(String[] args) {
+
+		List<String> countries = new ArrayList<>();
+
+		countries.add("KKTC");
+		countries.add("Şili");
+		countries.add("Fransa");
+		countries.add("Türkiye");
+		countries.add("Çek Cumhuriyeti");
+		countries.add("Japonya");
+
+		OrderWithLocale(countries);
+
+		for (String s : countries) {
+			System.out.println(s);
+		}
+	}
+
+	public static List<String> OrderWithLocale(List<String> list) {
+
+		Collator collator = Collator.getInstance(new Locale("tr"));
+
+		Collections.sort(list, collator);
+
+		return list;
+	}
+
+}
